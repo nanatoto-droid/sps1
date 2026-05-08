@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services - SPS Supplies</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Poppins', sans-serif; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        header { background: #07647C; color: white; padding: 20px 0; }
+        nav a { color: white; text-decoration: none; margin-right: 30px; }
+        .page-header { background: #07647C; color: white; padding: 60px 0; text-align: center; }
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 30px; padding: 60px 0; }
+        .service-card { border: 1px solid #e2e8f0; border-radius: 12px; padding: 30px; }
+        .service-icon { font-size: 40px; margin-bottom: 20px; }
+        .service-title { font-size: 22px; font-weight: 600; margin-bottom: 15px; color: #07647C; }
+        .service-features { list-style: none; margin-top: 20px; }
+        .service-features li { padding: 8px 0; border-bottom: 1px solid #e2e8f0; }
+        footer { background: #192a3d; color: #94A3B8; padding: 40px 0; text-align: center; margin-top: 60px; }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <a href="/">Home</a>
+                <a href="/about">About</a>
+                <a href="/products">Products</a>
+                <a href="/services">Services</a>
+                <a href="/contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+    
+    <section class="page-header">
+        <div class="container">
+            <h1>Our Services</h1>
+            <p>Comprehensive cash handling solutions and support</p>
+        </div>
+    </section>
+    
+    <div class="container">
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">🔧</div>
+                <h3 class="service-title">Multivendor ATM Maintenance</h3>
+                <p>Single Point of Contact for all ATM manufacturers including NCR, Diebold Nixdorf, and Hyosung.</p>
+                <ul class="service-features">
+                    <li>✓ Corrective & Preventive Maintenance</li>
+                    <li>✓ ATM Parts Repairs & Spare Parts</li>
+                    <li>✓ 24/7 Onsite & Remote Support</li>
+                </ul>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">📦</div>
+                <h3 class="service-title">Professional Installation</h3>
+                <p>End-to-end installation services for all our equipment.</p>
+                <ul class="service-features">
+                    <li>✓ Site Survey & Preparation</li>
+                    <li>✓ Professional Installation</li>
+                    <li>✓ User Training & Documentation</li>
+                </ul>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🛡️</div>
+                <h3 class="service-title">Security Consulting</h3>
+                <p>Security and cryptographic solutions for your cash operations.</p>
+                <ul class="service-features">
+                    <li>✓ Security Assessment</li>
+                    <li>✓ Cryptographic Solutions</li>
+                    <li>✓ Compliance Readiness</li>
+                </ul>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🎓</div>
+                <h3 class="service-title">User Training</h3>
+                <p>Comprehensive training for your staff on all equipment.</p>
+                <ul class="service-features">
+                    <li>✓ On-site Training</li>
+                    <li>✓ Remote Training Options</li>
+                    <li>✓ Refresher Courses Available</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 SPS Supplies Limited. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

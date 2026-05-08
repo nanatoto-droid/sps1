@@ -1,174 +1,57 @@
-{% extends "base.html" %}
-
-{% block title %}SPS Supplies - Professional Cash Handling Solutions in Kenya{% endblock %}
-
-{% block content %}
-<!-- Hero Section -->
-<section class="hero" style="background-image: url('{{ url_for('static', filename='images/hero-bg.jpg') }}')">
-    <div class="hero-overlay"></div>
-    <div class="container">
-        <div class="hero-content">
-            <h1>Advanced Cash Handling <span>Solutions</span></h1>
-            <p>We provide cutting-edge cash handling equipment and solutions that help businesses succeed. From ATMs and recyclers to banknote sorters and deposit machines, we have you covered.</p>
-            <div class="hero-buttons">
-                <a href="{{ url_for('products') }}" class="btn btn-primary">Explore Products</a>
-                <a href="{{ url_for('contact') }}" class="btn btn-outline">Contact Sales</a>
-            </div>
-            <div class="hero-stats">
-                <div><strong>7+</strong><span>Years Experience</span></div>
-                <div><strong>4</strong><span>Countries Served</span></div>
-                <div><strong>100+</strong><span>ATM Installations</span></div>
-            </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPS Supplies - Cash Handling Solutions</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Poppins', sans-serif; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        header { background: #07647C; color: white; padding: 20px 0; }
+        nav a { color: white; text-decoration: none; margin-right: 30px; }
+        .hero { background: linear-gradient(135deg, #07647C, #FF7300); color: white; padding: 100px 0; text-align: center; }
+        h1 { font-size: 48px; margin-bottom: 20px; }
+        .btn { display: inline-block; padding: 12px 30px; background: #FF7300; color: white; text-decoration: none; border-radius: 50px; margin-top: 20px; }
+        footer { background: #192a3d; color: #94A3B8; padding: 40px 0; text-align: center; }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <a href="/">Home</a>
+                <a href="/about">About</a>
+                <a href="/products">Products</a>
+                <a href="/services">Services</a>
+                <a href="/contact">Contact</a>
+            </nav>
         </div>
-    </div>
-</section>
-
-<!-- Technology Partners -->
-<section class="partners section-padding">
-    <div class="container">
-        <div class="section-header">
-            <h2>Our Technology Partners</h2>
-            <p>We partner with global leaders to bring you the best solutions</p>
+    </header>
+    
+    <section class="hero">
+        <div class="container">
+            <h1>SPS Supplies Limited</h1>
+            <p>Professional Cash Handling Equipment & Solutions in Kenya, Tanzania, Comoros & Djibouti</p>
+            <a href="/contact" class="btn">Get a Quote</a>
         </div>
-        <div class="partners-grid">
-            <div class="partner-card"><img src="{{ url_for('static', filename='images/partners/hyosung.png') }}" alt="Hyosung"></div>
-            <div class="partner-card"><img src="{{ url_for('static', filename='images/partners/gd.png') }}" alt="Giesecke+Devrient"></div>
-            <div class="partner-card"><img src="{{ url_for('static', filename='images/partners/snbc.png') }}" alt="SNBC"></div>
-            <div class="partner-card"><img src="{{ url_for('static', filename='images/partners/cadepo.png') }}" alt="Touchpoint Cadepo"></div>
-            <div class="partner-card"><img src="{{ url_for('static', filename='images/partners/atmeye.png') }}" alt="ATMeye.iQ"></div>
+    </section>
+    
+    <section style="padding: 60px 0; text-align: center;">
+        <div class="container">
+            <h2>Our Products</h2>
+            <p style="margin-top: 20px;">Hyosung ATMs | Banknote Sorters | Cash Deposit Machines | Teller Cash Recyclers</p>
+            <p style="margin-top: 10px;">Authorized distributor for Hyosung, Giesecke+Devrient, and SNBC</p>
         </div>
-    </div>
-</section>
-
-<!-- Services Section -->
-<section class="services section-padding bg-light">
-    <div class="container">
-        <div class="section-header">
-            <span class="badge">What We Do</span>
-            <h2>Our Core Services</h2>
-            <p>Comprehensive solutions for all your cash handling needs</p>
+    </section>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 SPS Supplies Limited. All rights reserved.</p>
+            <p>2nd Floor Grey Park Heights, Off Eastern Bypass, Utawala, Nairobi</p>
+            <p>Phone: +254 783 545 455 | Email: sales@spssupplies.com</p>
         </div>
-        <div class="services-grid">
-            <div class="service-card">
-                <div class="service-icon"><i class="fas fa-atm"></i></div>
-                <h3>ATM Solutions</h3>
-                <p>Supply, installation, and maintenance of ATM Cash Dispensers, Recyclers, and Teller Cash Recyclers.</p>
-                <a href="#" class="service-link">Learn More →</a>
-            </div>
-            <div class="service-card">
-                <div class="service-icon"><i class="fas fa-money-bill-wave"></i></div>
-                <h3>Banknote Processing</h3>
-                <p>High-speed banknote sorters and counterfeit detection systems from G+D and SNBC.</p>
-                <a href="#" class="service-link">Learn More →</a>
-            </div>
-            <div class="service-card">
-                <div class="service-icon"><i class="fas fa-tools"></i></div>
-                <h3>Multivendor ATM Support</h3>
-                <p>Single point of contact for all ATM manufacturers including NCR, Diebold Nixdorf, and Hyosung.</p>
-                <a href="#" class="service-link">Learn More →</a>
-            </div>
-            <div class="service-card">
-                <div class="service-icon"><i class="fas fa-shield-alt"></i></div>
-                <h3>Security Solutions</h3>
-                <p>Advanced video surveillance and ATM monitoring with ATMeye.iQ platform.</p>
-                <a href="#" class="service-link">Learn More →</a>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Featured Products -->
-<section class="featured-products section-padding">
-    <div class="container">
-        <div class="section-header">
-            <h2>Featured Products</h2>
-            <p>Discover our most popular cash handling solutions</p>
-        </div>
-        <div class="products-grid">
-            {% for product in featured_products %}
-            <div class="product-card">
-                <div class="product-image">
-                    <img src="{{ url_for('static', filename='images/products/' + product.image) }}" alt="{{ product.name }}" loading="lazy">
-                    <span class="product-category">{{ product.category|title }}</span>
-                </div>
-                <div class="product-info">
-                    <h3>{{ product.name }}</h3>
-                    <p>{{ product.description[:100] }}{% if product.description|length > 100 %}...{% endif %}</p>
-                    <a href="{{ url_for('product_detail', category=product.category_name if product.category_name else 'atm', product_id=product.id) }}" class="btn btn-sm">View Details →</a>
-                </div>
-            </div>
-            {% endfor %}
-        </div>
-        <div class="view-all">
-            <a href="{{ url_for('products') }}" class="btn btn-outline">View All Products</a>
-        </div>
-    </div>
-</section>
-
-<!-- Coverage Map Section -->
-<section class="coverage section-padding bg-dark">
-    <div class="container">
-        <div class="coverage-grid">
-            <div class="coverage-content">
-                <h2>Our Footprint in East Africa</h2>
-                <p>Headquartered in Nairobi, Kenya with operational presence across the region.</p>
-                <div class="country-list">
-                    <div class="country"><i class="fas fa-check-circle"></i> Kenya</div>
-                    <div class="country"><i class="fas fa-check-circle"></i> Tanzania</div>
-                    <div class="country"><i class="fas fa-check-circle"></i> Comoros</div>
-                    <div class="country"><i class="fas fa-check-circle"></i> Djibouti</div>
-                </div>
-                <a href="{{ url_for('contact') }}" class="btn btn-primary">Contact Us ↗</a>
-            </div>
-            <div class="coverage-map">
-                <img src="{{ url_for('static', filename='images/east-africa-map.png') }}" alt="East Africa Coverage Map" loading="lazy">
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Why Choose Us -->
-<section class="why-us section-padding bg-light">
-    <div class="container">
-        <div class="section-header">
-            <h2>Why Choose SPS Supplies?</h2>
-        </div>
-        <div class="features-grid">
-            <div class="feature">
-                <div class="feature-icon"><i class="fas fa-star-of-life"></i></div>
-                <h3>Authorized Distributor</h3>
-                <p>Direct partner with Hyosung, G+D, and other global leaders.</p>
-            </div>
-            <div class="feature">
-                <div class="feature-icon"><i class="fas fa-headset"></i></div>
-                <h3>24/7 Support</h3>
-                <p>Round-the-clock technical support and maintenance services.</p>
-            </div>
-            <div class="feature">
-                <div class="feature-icon"><i class="fas fa-boxes"></i></div>
-                <h3>Substantial Inventory</h3>
-                <p>We maintain large stock levels for quick deployment.</p>
-            </div>
-            <div class="feature">
-                <div class="feature-icon"><i class="fas fa-chalkboard-user"></i></div>
-                <h3>Expert Training</h3>
-                <p>Comprehensive user and technician training programs.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Call to Action -->
-<section class="cta-section">
-    <div class="container">
-        <div class="cta-content">
-            <h2>Ready to Optimize Your Cash Operations?</h2>
-            <p>Let's discuss how our solutions can benefit your business.</p>
-            <div class="cta-buttons">
-                <a href="{{ url_for('contact') }}" class="btn btn-white">Request Consultation</a>
-                <a href="https://wa.me/254795545438" class="btn btn-outline-light"><i class="fab fa-whatsapp"></i> WhatsApp Us</a>
-            </div>
-        </div>
-    </div>
-</section>
-{% endblock %}
+    </footer>
+</body>
+</html>

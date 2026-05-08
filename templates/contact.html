@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - SPS Supplies</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Poppins', sans-serif; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        header { background: #07647C; color: white; padding: 20px 0; }
+        nav a { color: white; text-decoration: none; margin-right: 30px; }
+        .page-header { background: #07647C; color: white; padding: 60px 0; text-align: center; }
+        .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; padding: 60px 0; }
+        .info-box { background: #07647C; color: white; padding: 30px; border-radius: 12px; }
+        .info-item { margin: 25px 0; display: flex; gap: 15px; align-items: center; }
+        .info-icon { font-size: 24px; }
+        .contact-form { background: white; padding: 30px; border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.1); }
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; margin-bottom: 8px; font-weight: 500; }
+        .form-group input, .form-group textarea { width: 100%; padding: 12px; border: 1px solid #e2e8f0; border-radius: 8px; font-family: inherit; }
+        .btn-submit { background: #FF7300; color: white; padding: 12px 30px; border: none; border-radius: 50px; cursor: pointer; font-size: 16px; font-weight: 600; }
+        footer { background: #192a3d; color: #94A3B8; padding: 40px 0; text-align: center; margin-top: 60px; }
+        .whatsapp-btn { position: fixed; bottom: 20px; right: 20px; background: #25D366; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; text-decoration: none; color: white; box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
+        @media (max-width: 768px) { .contact-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <a href="/">Home</a>
+                <a href="/about">About</a>
+                <a href="/products">Products</a>
+                <a href="/services">Services</a>
+                <a href="/contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+    
+    <section class="page-header">
+        <div class="container">
+            <h1>Contact Us</h1>
+            <p>Get in touch with our team for inquiries and support</p>
+        </div>
+    </section>
+    
+    <div class="container">
+        <div class="contact-grid">
+            <div class="info-box">
+                <h2>Contact Information</h2>
+                <div class="info-item">
+                    <div class="info-icon">📍</div>
+                    <div>2nd Floor Grey Park Heights, Off Eastern Bypass, Utawala, Nairobi, Kenya</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-icon">📞</div>
+                    <div>+254 783 545 455<br>+254 795 545 438</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-icon">📧</div>
+                    <div>sales@spssupplies.com</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-icon">💬</div>
+                    <div>WhatsApp: +254 795 545 438</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-icon">⏰</div>
+                    <div>Monday-Friday: 8AM-6PM<br>Saturday: 9AM-1PM</div>
+                </div>
+            </div>
+            
+            <form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                <h2>Send us a message</h2>
+                <div class="form-group">
+                    <label>Full Name *</label>
+                    <input type="text" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label>Email Address *</label>
+                    <input type="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label>Phone Number</label>
+                    <input type="tel" name="phone">
+                </div>
+                <div class="form-group">
+                    <label>Company Name</label>
+                    <input type="text" name="company">
+                </div>
+                <div class="form-group">
+                    <label>Message *</label>
+                    <textarea name="message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="btn-submit">Send Message →</button>
+                <p style="margin-top: 15px; font-size: 12px; color: #666;">We'll respond within 24 hours</p>
+            </form>
+        </div>
+    </div>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 SPS Supplies Limited. All rights reserved.</p>
+            <p>Serving Kenya, Tanzania, Comoros, and Djibouti</p>
+        </div>
+    </footer>
+    
+    <a href="https://wa.me/254795545438" class="whatsapp-btn" target="_blank">💬</a>
+</body>
+</html>

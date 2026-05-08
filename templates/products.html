@@ -1,67 +1,91 @@
-{% extends "base.html" %}
-
-{% block title %}Products - Cash Handling Equipment & Solutions{% endblock %}
-
-{% block content %}
-<section class="page-header">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products - SPS Supplies</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Poppins', sans-serif; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        header { background: #07647C; color: white; padding: 20px 0; }
+        nav a { color: white; text-decoration: none; margin-right: 30px; }
+        .page-header { background: #07647C; color: white; padding: 60px 0; text-align: center; }
+        .products-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 30px; padding: 60px 0; }
+        .product-card { border: 1px solid #e2e8f0; border-radius: 12px; padding: 24px; text-align: center; transition: transform 0.3s; }
+        .product-card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+        .product-icon { font-size: 48px; margin-bottom: 16px; }
+        .product-title { font-size: 20px; font-weight: 600; margin-bottom: 12px; color: #07647C; }
+        .btn-quote { display: inline-block; padding: 10px 20px; background: #FF7300; color: white; text-decoration: none; border-radius: 50px; margin-top: 16px; }
+        footer { background: #192a3d; color: #94A3B8; padding: 40px 0; text-align: center; margin-top: 60px; }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <a href="/">Home</a>
+                <a href="/about">About</a>
+                <a href="/products">Products</a>
+                <a href="/services">Services</a>
+                <a href="/contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+    
+    <section class="page-header">
+        <div class="container">
+            <h1>Our Products</h1>
+            <p>Comprehensive cash handling solutions for businesses of all sizes</p>
+        </div>
+    </section>
+    
     <div class="container">
-        <h1>Our Products</h1>
-        <p>Comprehensive cash handling solutions for businesses of all sizes</p>
-    </div>
-</section>
-
-<section class="products-page section-padding">
-    <div class="container">
-        <div class="products-layout">
-            <!-- Sidebar Filters -->
-            <aside class="products-sidebar">
-                <div class="filter-group">
-                    <h3>Categories</h3>
-                    <ul class="category-list">
-                        <li><a href="{{ url_for('products') }}?category=all" class="{% if active_category == 'all' %}active{% endif %}">All Products</a></li>
-                        <li><a href="{{ url_for('products') }}?category=atm" class="{% if active_category == 'atm' %}active{% endif %}">ATMs & Recyclers</a></li>
-                        <li><a href="{{ url_for('products') }}?category=banknote_sorters" class="{% if active_category == 'banknote_sorters' %}active{% endif %}">Banknote Sorters</a></li>
-                        <li><a href="{{ url_for('products') }}?category=ccdm" class="{% if active_category == 'ccdm' %}active{% endif %}">Cash/Cheque Deposit</a></li>
-                    </ul>
-                </div>
-            </aside>
-            
-            <!-- Products Grid -->
-            <div class="products-main">
-                {% for category, items in products.items() %}
-                    {% if active_category == 'all' or active_category == category %}
-                        <div class="category-section">
-                            <h2>{{ category|replace('_', ' ')|title }}</h2>
-                            <div class="products-grid">
-                                {% for product in items %}
-                                <div class="product-card">
-                                    <div class="product-image">
-                                        <img src="{{ url_for('static', filename='images/products/' + product.image) }}" alt="{{ product.name }}" loading="lazy">
-                                    </div>
-                                    <div class="product-info">
-                                        <h3>{{ product.name }}</h3>
-                                        <p>{{ product.description[:80] }}...</p>
-                                        <a href="{{ url_for('product_detail', category=category, product_id=product.id) }}" class="btn btn-sm">View Details →</a>
-                                    </div>
-                                </div>
-                                {% endfor %}
-                            </div>
-                        </div>
-                    {% endif %}
-                {% endfor %}
+        <div class="products-grid">
+            <div class="product-card">
+                <div class="product-icon">🏧</div>
+                <h3 class="product-title">Hyosung MX5600S</h3>
+                <p>Lobby/Front access Cash Dispenser with intuitive display. Up to 5 high capacity cassettes.</p>
+                <a href="/contact" class="btn-quote">Request Quote →</a>
+            </div>
+            <div class="product-card">
+                <div class="product-icon">🏧</div>
+                <h3 class="product-title">Hyosung MX5600ST</h3>
+                <p>Through the Wall/Rearload Cash Dispenser for secure cash management.</p>
+                <a href="/contact" class="btn-quote">Request Quote →</a>
+            </div>
+            <div class="product-card">
+                <div class="product-icon">💰</div>
+                <h3 class="product-title">Hyosung MX8600S</h3>
+                <p>Cash Recycling ATM with 4 recycling cassettes + 1 deposit cassette.</p>
+                <a href="/contact" class="btn-quote">Request Quote →</a>
+            </div>
+            <div class="product-card">
+                <div class="product-icon">📊</div>
+                <h3 class="product-title">SNBC Banknote Sorter</h3>
+                <p>High-speed banknote sorting with counterfeit detection. Processes up to 40 currencies.</p>
+                <a href="/contact" class="btn-quote">Request Quote →</a>
+            </div>
+            <div class="product-card">
+                <div class="product-icon">💵</div>
+                <h3 class="product-title">G+D BPS C2 Series</h3>
+                <p>High-performance banknote processing systems up to 1,200 notes/min.</p>
+                <a href="/contact" class="btn-quote">Request Quote →</a>
+            </div>
+            <div class="product-card">
+                <div class="product-icon">📝</div>
+                <h3 class="product-title">Cash/Cheque Deposit Machine</h3>
+                <p>24/7 instant deposit solution with authentication and fitness sorting.</p>
+                <a href="/contact" class="btn-quote">Request Quote →</a>
             </div>
         </div>
     </div>
-</section>
-
-<!-- Quote CTA -->
-<section class="quote-cta">
-    <div class="container">
-        <div class="quote-box">
-            <h3>Need a quote or custom solution?</h3>
-            <p>Our team is ready to help you find the perfect equipment for your needs.</p>
-            <a href="{{ url_for('contact') }}" class="btn btn-primary">Request Quote →</a>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 SPS Supplies Limited. All rights reserved.</p>
         </div>
-    </div>
-</section>
-{% endblock %}
+    </footer>
+</body>
+</html>
