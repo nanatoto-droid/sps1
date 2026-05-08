@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="SPS Supplies - Professional cash handling equipment and solutions in Kenya, Tanzania, Comoros, and Djibouti">
+    <meta name="keywords" content="cash handling solutions, ATM, banknote sorters, cash deposit machines, TCR, Kenya">
+    <title>{% block title %}SPS Supplies - Cash Handling Solutions{% endblock %}</title>
+    
+    <!-- Preconnect for faster loading -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='images/favicon.ico') }}">
+    
+    {% block extra_css %}{% endblock %}
+</head>
+<body>
+    <!-- Header -->
+    <header class="site-header">
+        <div class="top-bar">
+            <div class="container">
+                <div class="contact-info">
+                    <a href="tel:+254783545455"><i class="fas fa-phone"></i> +254 783 545 455</a>
+                    <a href="mailto:{{ contact_email }}"><i class="fas fa-envelope"></i> {{ contact_email }}</a>
+                </div>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/spssupplies" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://twitter.com/@spssupplies" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.linkedin.com/company/sps-supplies-ltd-kenya/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://wa.me/254795545438" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+        </div>
+        
+        <nav class="main-nav">
+            <div class="container">
+                <div class="logo">
+                    <a href="{{ url_for('home') }}">
+                        <img src="{{ url_for('static', filename='images/logo.png') }}" alt="SPS Supplies Logo" class="logo-img">
+                    </a>
+                </div>
+                
+                <button class="mobile-menu-btn" aria-label="Menu" id="mobileMenuBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+                
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="{{ url_for('home') }}" class="{% if request.endpoint == 'home' %}active{% endif %}">Home</a></li>
+                    <li><a href="{{ url_for('about') }}" class="{% if request.endpoint == 'about' %}active{% endif %}">About Us</a></li>
+                    <li class="dropdown">
+                        <a href="{{ url_for('products') }}" class="{% if request.endpoint == 'products' %}active{% endif %}">Products <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="{{ url_for('products') }}?category=atm">ATMs & Recyclers</a></li>
+                            <li><a href="{{ url_for('products') }}?category=banknote_sorters">Banknote Sorters</a></li>
+                            <li><a href="{{ url_for('products') }}?category=ccdm">Cash/Cheque Deposit Machines</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="{{ url_for('services') }}" class="{% if request.endpoint == 'services' %}active{% endif %}">Services</a></li>
+                    <li><a href="{{ url_for('contact') }}" class="{% if request.endpoint == 'contact' %}active{% endif %}">Contact</a></li>
+                    <li><a href="https://wa.me/254795545438" class="btn-quote">Get Quote</a></li>
+                </ul>
+                
+                <!-- Search -->
+                <div class="search-container">
+                    <button class="search-btn" id="searchBtn">
+                        <i class="fas fa-search"></i>
+                    </button>
+                    <div class="search-dropdown" id="searchDropdown">
+                        <input type="text" id="searchInput" placeholder="Search products..." autocomplete="off">
+                        <div id="searchResults" class="search-results"></div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+    
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <img src="{{ url_for('static', filename='images/logo-white.png') }}" alt="SPS Supplies" class="footer-logo">
+                    <p>Advanced cash handling solutions that help businesses succeed in today's ever-changing world.</p>
+                    <div class="footer-contact">
+                        <p><i class="fas fa-map-marker-alt"></i> {{ address }}</p>
+                        <p><i class="fas fa-phone"></i> {% for phone in phone_numbers %}{{ phone }}{% if not loop.last %} / {% endif %}{% endfor %}</p>
+                        <p><i class="fas fa-envelope"></i> {{ contact_email }}</p>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="{{ url_for('home') }}">Home</a></li>
+                        <li><a href="{{ url_for('about') }}">About Us</a></li>
+                        <li><a href="{{ url_for('products') }}">Products</a></li>
+                        <li><a href="{{ url_for('services') }}">Services</a></li>
+                        <li><a href="{{ url_for('contact') }}">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Our Products</h4>
+                    <ul>
+                        <li><a href="{{ url_for('products') }}?category=atm">ATM Cash Dispensers</a></li>
+                        <li><a href="{{ url_for('products') }}?category=atm">Teller Cash Recyclers</a></li>
+                        <li><a href="{{ url_for('products') }}?category=banknote_sorters">Banknote Sorters</a></li>
+                        <li><a href="{{ url_for('products') }}?category=ccdm">Cash Deposit Machines</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Newsletter</h4>
+                    <p>Subscribe for updates and offers</p>
+                    <form id="newsletterForm" class="newsletter-form">
+                        <input type="email" id="newsletterEmail" placeholder="Your email address" required>
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                    <div id="newsletterMessage" class="newsletter-message"></div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; {{ current_year }} SPS Supplies Limited. All rights reserved.</p>
+                <p>Powerd by Professional Web Solutions</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- WhatsApp Chat Button -->
+    <a href="https://wa.me/254795545438" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+        <span class="whatsapp-tooltip">Chat with us!</span>
+    </a>
+    
+    <!-- JavaScript -->
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    {% block extra_js %}{% endblock %}
+</body>
+</html>

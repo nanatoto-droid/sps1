@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+
+{% block title %}Products - Cash Handling Equipment & Solutions{% endblock %}
+
+{% block content %}
+<section class="page-header">
+    <div class="container">
+        <h1>Our Products</h1>
+        <p>Comprehensive cash handling solutions for businesses of all sizes</p>
+    </div>
+</section>
+
+<section class="products-page section-padding">
+    <div class="container">
+        <div class="products-layout">
+            <!-- Sidebar Filters -->
+            <aside class="products-sidebar">
+                <div class="filter-group">
+                    <h3>Categories</h3>
+                    <ul class="category-list">
+                        <li><a href="{{ url_for('products') }}?category=all" class="{% if active_category == 'all' %}active{% endif %}">All Products</a></li>
+                        <li><a href="{{ url_for('products') }}?category=atm" class="{% if active_category == 'atm' %}active{% endif %}">ATMs & Recyclers</a></li>
+                        <li><a href="{{ url_for('products') }}?category=banknote_sorters" class="{% if active_category == 'banknote_sorters' %}active{% endif %}">Banknote Sorters</a></li>
+                        <li><a href="{{ url_for('products') }}?category=ccdm" class="{% if active_category == 'ccdm' %}active{% endif %}">Cash/Cheque Deposit</a></li>
+                    </ul>
+                </div>
+            </aside>
+            
+            <!-- Products Grid -->
+            <div class="products-main">
+                {% for category, items in products.items() %}
+                    {% if active_category == 'all' or active_category == category %}
+                        <div class="category-section">
+                            <h2>{{ category|replace('_', ' ')|title }}</h2>
+                            <div class="products-grid">
+                                {% for product in items %}
+                                <div class="product-card">
+                                    <div class="product-image">
+                                        <img src="{{ url_for('static', filename='images/products/' + product.image) }}" alt="{{ product.name }}" loading="lazy">
+                                    </div>
+                                    <div class="product-info">
+                                        <h3>{{ product.name }}</h3>
+                                        <p>{{ product.description[:80] }}...</p>
+                                        <a href="{{ url_for('product_detail', category=category, product_id=product.id) }}" class="btn btn-sm">View Details →</a>
+                                    </div>
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Quote CTA -->
+<section class="quote-cta">
+    <div class="container">
+        <div class="quote-box">
+            <h3>Need a quote or custom solution?</h3>
+            <p>Our team is ready to help you find the perfect equipment for your needs.</p>
+            <a href="{{ url_for('contact') }}" class="btn btn-primary">Request Quote →</a>
+        </div>
+    </div>
+</section>
+{% endblock %}

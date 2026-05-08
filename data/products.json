@@ -1,0 +1,166 @@
+{
+  "atm": [
+    {
+      "id": "mx5600s",
+      "name": "Hyosung MX5600S",
+      "category": "ATM",
+      "description": "Lobby/Front access Cash Dispenser",
+      "features": [
+        "Simplified engineering for easier maintenance",
+        "Intuitive User Interface 15\" / 19\" / 21.5\" display LCD",
+        "Up to 4 or 5 high capacity dispense cassettes (3000 notes per cassette)",
+        "Contacts ready for NFC - mobile transactions",
+        "Low power consumption"
+      ],
+      "image": "mx5600s.jpg",
+      "installation": "Lobby/ Front access",
+      "specifications": {
+        "dimensions": "540(W)x710(D)x1580(H)mm",
+        "weight": "390Kg"
+      }
+    },
+    {
+      "id": "mx5600st",
+      "name": "Hyosung MX5600ST",
+      "category": "ATM",
+      "description": "Through the Wall/Rearload Cash Dispenser",
+      "features": [
+        "Through the Wall (TTU) installation",
+        "Rearload design for secure cash management",
+        "Same high capacity cassettes as MX5600S",
+        "Low power consumption"
+      ],
+      "image": "mx5600st.jpg",
+      "installation": "Through the Wall"
+    },
+    {
+      "id": "mx8600s",
+      "name": "Hyosung MX8600S",
+      "category": "ATM Recycler",
+      "description": "Lobby/Front access Cash Recycling",
+      "features": [
+        "4 Recycling cassettes + 1 Deposit cassette",
+        "Up to 3000 notes capacity per cassette",
+        "Full cash recycling capability",
+        "Reduces CIT frequency"
+      ],
+      "image": "mx8600s.jpg",
+      "installation": "Lobby/ Front access"
+    },
+    {
+      "id": "mx8600st",
+      "name": "Hyosung MX8600ST",
+      "category": "ATM Recycler",
+      "description": "Through the Wall Cash Recycling",
+      "features": [
+        "Through the Wall installation",
+        "Full recycling with deposit capability",
+        "Transit cassette for secure cash transfer"
+      ],
+      "image": "mx8600st.jpg",
+      "installation": "Through the Wall"
+    },
+    {
+      "id": "mx8200s",
+      "name": "Hyosung 8TA (MX8200S)",
+      "category": "ATM Recycler with Cheque",
+      "description": "Cash Recycling & Cheque Deposit Teller Machine",
+      "features": [
+        "Advanced Cash Recycling",
+        "Cheque Deposit Module",
+        "Transit Cassette for secure cash transfer",
+        "Reduces CIT frequency",
+        "Recycles up to 4 denominations",
+        "Check scanning module (CSM) up to 30 checks per transaction"
+      ],
+      "image": "mx8200s.jpg",
+      "installation": "Lobby/Front access"
+    }
+  ],
+  "banknote_sorters": [
+    {
+      "id": "bne-s110",
+      "name": "SNBC BNE S110",
+      "category": "Banknote Sorter",
+      "speed": "1+1 / 2+1 max 900 notes/min",
+      "currency": "Up to 40 currencies",
+      "detection": "MTS, 2x CIS, MAG, IR, UV",
+      "weight": "15.6kg",
+      "features": [
+        "Serial Number Reading",
+        "Automatic Shutter",
+        "Fitness class ATM / FIT / UNFIT",
+        "Remote updates",
+        "Auto Currency",
+        "Multi language"
+      ],
+      "image": "bne-s110.jpg"
+    },
+    {
+      "id": "pronote",
+      "name": "ProNote Banknote Sorter",
+      "category": "Banknote Sorter",
+      "speed": "1+1 max 1100 notes/min",
+      "fitness": "Up to 10 Adaptations",
+      "detection": "MTS, 2x CIS, MAG, IR, UV",
+      "weight": "10.5kg",
+      "features": [
+        "Adjustable speed",
+        "Auto Currency",
+        "Fitness sorting",
+        "Remote updates",
+        "Portable design"
+      ],
+      "image": "pronote.jpg"
+    },
+    {
+      "id": "bps-c2-2",
+      "name": "G+D BPS C2-2",
+      "category": "High-Speed Sorter",
+      "speed": "1,050 notes/min",
+      "currency": "Multi-currency up to 40",
+      "hopper": "Up to 1,000 notes",
+      "features": [
+        "Dynamic singling up to 1,200 notes/min",
+        "Mixed currency up to 10 currencies",
+        "CE, GS, CB certified"
+      ],
+      "image": "bps-c2.jpg"
+    }
+  ],
+  "ccdm": [
+    {
+      "id": "bdm-500",
+      "name": "SNBC BDM-500",
+      "category": "Cash Deposit Machine",
+      "description": "Advanced cash deposit solution with authentication",
+      "specifications": {
+        "deposit_speed": "12 Notes/Sec",
+        "cash_bag_capacity": "30,000 Notes",
+        "cash_in_capacity": "500 notes",
+        "escrow_capacity": "200 notes",
+        "rejection_slot": "100 Notes"
+      },
+      "display": "19\", Privacy filter, touch screen, Vandal resistant",
+      "security": "UL291 safe with dual locks",
+      "dimensions": "540(W)x710(D)x1580(H)mm",
+      "weight": "390Kg",
+      "image": "bdm-500.jpg"
+    },
+    {
+      "id": "cadepo",
+      "name": "Touchpoint CADEPO",
+      "category": "Cash Cheque Deposit Machine",
+      "description": "Complete cash and cheque deposit solution",
+      "specifications": {
+        "deposit_speed": "12 Notes/Sec",
+        "cash_bag_capacity": "30,000 Notes",
+        "cheque_cassette": "300pcs"
+      },
+      "display": "19\" touch screen",
+      "dimensions": "830*710*1950mm",
+      "weight": "420kg",
+      "image": "cadepo.jpg"
+    }
+  ]
+}
